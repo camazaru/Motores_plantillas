@@ -1,0 +1,35 @@
+<% if(productos.length > 0) { %>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table" style="width: 100%;">
+                <thead class="thead-dark">
+                    <th scope="col" style="width: 30%;">Titulo</th>
+                    <th scope="col" style="width: 30%;">Precio</th>
+                    <th scope="col" style="width: 40%;" class="text-center">Imagen</th>
+                </thead>
+                <tbody>
+                    <% productos.forEach(function(detprod) { %>
+                        <tr>
+                            <td class="align-middle">
+                                <%- detprod.title %>
+                            </td>
+                            <td class="align-middle">
+                                <%- detprod.price %>
+                            </td>
+                            <td class="align-middle text-center"><img src="<%-detprod.thumbnail%>" width="20%" alt="MDN"></td>
+                        </tr>
+                        <%})%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%} else {%>
+        <div class="alert alert-danger" role="alert">
+            No se encuentran productos registrados
+        </div>
+        <%}%>
+            <div class="row mt-2">
+                <div class="col-md-8  offset-md-2 text-center">
+                    <a href="../" class="btn btn-secondary">Formulario Agregar</a>
+                </div>
+            </div>
