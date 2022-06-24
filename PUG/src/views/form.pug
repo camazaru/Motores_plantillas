@@ -1,0 +1,19 @@
+extends main.pug    
+block form
+    div
+        form(action="/productos" method="post")
+            div(class="row")
+                div(class="col-md-3")
+                    label title: 
+                    input(class="form-control" type="text" name="title")
+                div(class="col-md-3")
+                    label price: 
+                    input(class="form-control" type="number" name="price")
+                div(class="col-md-3")
+                    label thumbnail: 
+                    input(class="form-control" type="text" name="thumbnail")
+                div(class="col-md-1" style="align-self:center")
+                    button(class="btn btn-primary" type="submit") Enviar
+            div(class="row mt-2")
+                div(class="col-md-10 text-center")
+                    a(href="/productos" class="btn btn-secondary") Detalle Productos
